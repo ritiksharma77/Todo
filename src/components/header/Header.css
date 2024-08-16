@@ -1,0 +1,9 @@
+.header-text {
+  width: auto;
+  height: auto;
+  font-size: 48px;
+  font-weight: bold;
+  display: grid;
+  place-items: center;
+  padding: 10px;
+}
