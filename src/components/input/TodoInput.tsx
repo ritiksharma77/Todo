@@ -5,7 +5,7 @@ import { addTodo } from "../../redux/slices/todoSlice";
 const TodoInput = () => {
   const [inputValue, setInputValue] = useState<String>("");
   const dispatch = useDispatch();
-  const handleInputChange = (e: any) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value);
   };
   const handleAddButton = () => {
@@ -13,8 +13,8 @@ const TodoInput = () => {
     dispatch(addTodo(inputValue));
     setInputValue("");
   };
-  const handleButtonPress = (e: any) => {
-    if (e.keyCode === 13 && inputValue !== "") {
+  const handleButtonPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter" && inputValue !== "") {
       handleAddButton();
     }
   };

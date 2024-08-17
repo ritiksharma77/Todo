@@ -18,11 +18,11 @@ export const todoSlice = createSlice({
       state.todos.push(newTodo);
     },
     completedTodo: (state, action) => {
-      const index = state.todos.findIndex((todo: any) => todo.id === action.payload);
+      const index = state.todos.findIndex((todo) => todo.id === action.payload);
       state.todos[index].name = action.payload.completed;
     },
     removeTodo: (state, action) => {
-      state.todos = state.todos.filter((todo: any) => todo.id !== action.payload);
+      state.todos = state.todos.filter((todo) => todo.id !== action.payload);
     },
   },
 });

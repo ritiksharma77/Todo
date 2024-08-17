@@ -1,9 +1,9 @@
 import "./TodoList.css";
-import { Todo } from "../../types";
+import { RootState, Todo, Todos } from "../../types";
 import { useSelector } from "react-redux";
 import { TodoItem } from "./TodoItem";
 const TodoList = () => {
-  const todos = useSelector((state: any) => state.todos.todos);
+  const todos = useSelector((state: RootState) => state.todos.todos);
   return (
     <div>
       {todos &&

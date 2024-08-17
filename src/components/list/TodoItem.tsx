@@ -2,7 +2,13 @@ import "./TodoItem.css";
 import DeleteIcon from "../../assets/delete-icon.svg";
 import { useDispatch } from "react-redux";
 import { removeTodo } from "../../redux/slices/todoSlice";
-export const TodoItem = ({ todo }: any) => {
+import { Todo } from "../../types";
+
+type TodoItemProps = {
+  todo: Todo;
+};
+
+export const TodoItem = ({ todo }: TodoItemProps) => {
   const dispatch = useDispatch();
   const handleDelete = () => {
     dispatch(removeTodo(todo.id));
